@@ -1,5 +1,6 @@
 package com.tba.theboxingapp;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -15,6 +16,10 @@ public class TBATabsActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        final ActionBar actionBar = getActionBar();
+
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tbatabs);
 
