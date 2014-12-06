@@ -13,7 +13,7 @@ public class User extends BaseModel {
     public String name;
     public String profileImageUrl;
     public String twitterId;
-    public String sessionToken;
+    public String sessionToken = "ZGj60_GkPlJSG0IdxI5s0A";
     public boolean isLoggedIn;
 
     private static User current;

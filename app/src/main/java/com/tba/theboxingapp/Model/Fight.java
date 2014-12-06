@@ -1,5 +1,7 @@
 package com.tba.theboxingapp.Model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.Log;
 
 import org.json.JSONArray;
@@ -13,7 +15,8 @@ import java.util.Date;
 /**
  * Created by christibbs on 9/16/14.
  */
-public class Fight extends BaseModel {
+public class Fight extends BaseModel  {
+
     public enum State {
         UPCOMING, IN_PROGRESS, PAST
     }

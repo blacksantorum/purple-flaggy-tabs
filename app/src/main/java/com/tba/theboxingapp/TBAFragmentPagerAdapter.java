@@ -15,11 +15,24 @@ public class TBAFragmentPagerAdapter extends FragmentPagerAdapter
 
     @Override
     public int getCount() {
-        return 3;
+        return 2;
     }
 
     @Override
     public Fragment getItem(int position) {
-        return new Fragment();
+        if (position == 0) {
+            return FightCardsFragment.newInstance(FightCardsFragment.FightCardsType.FEATURED);
+        } else {
+            return FightCardsFragment.newInstance(FightCardsFragment.FightCardsType.PAST);
+        }
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        if (position == 0) {
+            return "Featured";
+        } else {
+            return "Past";
+        }
     }
 }

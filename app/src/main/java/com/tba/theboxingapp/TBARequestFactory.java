@@ -26,7 +26,7 @@ import java.lang.reflect.Method;
 
 public class TBARequestFactory {
 
-    private static final String BASE_URL = "http://www.theboxingapp.com/api/v1/";
+    private static final String BASE_URL = "http://www.theboxingapp.com/api/v2/";
 
     private static String withSessionToken(String url)
     {
@@ -62,6 +62,28 @@ public class TBARequestFactory {
         Log.i("url",url);
 
         return new JsonArrayRequest(url,listener, errorListener);
+    }
+
+    public static JsonObjectRequest FeaturedFightsRequest(int page,
+                                                          Response.Listener<JSONObject> listener,
+                                                          Response.ErrorListener errorListener)
+    {
+        JSONObject params = new JSONObject();
+
+        String url = BASE_URL + "fights/future?session_token="+User.currentUser()+"&page=" + String.valueOf(page);
+
+        return new JsonObjectRequest(Request.Method.GET, url,params,listener,errorListener );
+    }
+
+    public static JsonObjectRequest PastFightsRequest(int page,
+                                                          Response.Listener<JSONObject> listener,
+                                                          Response.ErrorListener errorListener)
+    {
+        JSONObject params = new JSONObject();
+
+        String url = BASE_URL + "fights/past?session_token="+User.currentUser()+"&page=" + String.valueOf(page);
+
+        return new JsonObjectRequest(Request.Method.GET, url,params,listener,errorListener );
     }
 
     public static JsonArrayRequest FightsRequest(Response.Listener<JSONArray> listener,

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="tba_red">#d52929</color>
+    <color name="semi_transparent_tba_red">#DDd52929</color>
+    <color name="tba_background">#2f3943</color>
+</resources>

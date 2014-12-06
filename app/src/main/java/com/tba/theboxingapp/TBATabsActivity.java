@@ -2,6 +2,7 @@ package com.tba.theboxingapp;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -13,10 +14,10 @@ public class TBATabsActivity extends FragmentActivity {
 
     TBAFragmentPagerAdapter mFragmentPagerAdapter;
     ViewPager mViewPager;
+    SlidingTabLayout mSlidingTabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        final ActionBar actionBar = getActionBar();
 
 
 
@@ -25,8 +26,15 @@ public class TBATabsActivity extends FragmentActivity {
 
         mFragmentPagerAdapter = new TBAFragmentPagerAdapter(getSupportFragmentManager());
 
+        mSlidingTabLayout = (SlidingTabLayout)findViewById(R.id.sliding_tabs);
+        mSlidingTabLayout.setBackgroundColor(getResources().getColor(R.color.tba_background));
+        mSlidingTabLayout.setSelectedIndicatorColors(getResources().getColor(R.color.tba_red));
+        // mSlidingTabLayout.setDividerColors(Color.parseColor("#FFFFFF"));
+
         mViewPager = (ViewPager)findViewById(R.id.pager);
         mViewPager.setAdapter(mFragmentPagerAdapter);
+
+        mSlidingTabLayout.setViewPager(mViewPager);
     }
 
 
